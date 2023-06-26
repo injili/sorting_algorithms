@@ -5,6 +5,7 @@
  * in ascending order
  *
  * @list: the list passed to the function
+ * Return: no return value
  */
 
 void cocktail_sort_list(listint_t **list)
