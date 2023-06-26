@@ -6,3 +6,7 @@
  *
  * @list: the list passed to the function
  */
+
+void cocktail_sort_list(listint_t **list)
+{
+}
