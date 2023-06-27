@@ -2,6 +2,27 @@
 #include "sort.h"
 
 /**
+ * max_int - a functin to find the maximum array in the integer
+ * @array: the array passed to the function
+ * @size: the size of the arrray
+ *
+ * Return: an integer value of the maximum
+ */
+int max_int(int *array, size_t size)
+{
+	int max, i;
+
+	max = array[0];
+	for (i = 0; i < (int)size; i++)
+	{
+		if (array[i] > max)
+			max = array[i]
+	}
+
+	return (max);
+}
+
+/**
  * counting_sort - a function implementing an integer sorting algorithm
  *
  * @array: an array passed to the function containing numbers >= 0
@@ -12,18 +33,11 @@
 
 void counting_sort(int *array, size_t size)
 {
-	int max = array[0], *count, k, j, *sorted;
-	size_t i;
+	int max, *count, k, j, *sorted;
 
 	if (array == NULL || size == 0)
 		return;
-
-	for (i = 1; i < size; i++)
-	{
-		if (array[i] > max)
-			max = array[i];
-	}
-	max += 1;
+	max = max_int(array, size);
 
 	count = malloc(sizeof(int) * max);
 	if (count == NULL)
@@ -52,7 +66,7 @@ void counting_sort(int *array, size_t size)
 		count[array[i]]--;
 	}
 
-	for(i = 0; i < size; i++)
+	for (i = 0; i < size; i++)
 		array[i] = sorted[i];
 
 	free(count);
