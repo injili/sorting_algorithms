@@ -16,10 +16,10 @@ int max_int(int *array, size_t size)
 	for (i = 0; i < (int)size; i++)
 	{
 		if (array[i] > max)
-			max = array[i]
+			max = array[i];
 	}
 
-	return (max);
+	return (max + 1);
 }
 
 /**
@@ -34,9 +34,11 @@ int max_int(int *array, size_t size)
 void counting_sort(int *array, size_t size)
 {
 	int max, *count, k, j, *sorted;
+	size_t i;
 
 	if (array == NULL || size == 0)
 		return;
+
 	max = max_int(array, size);
 
 	count = malloc(sizeof(int) * max);
