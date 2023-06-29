@@ -62,7 +62,7 @@ void counting_sort(int *array, size_t size)
 		return;
 	}
 
-	for (i = size - 1; i != 0; i--)
+	for (i = 0; i < size; i++)
 	{
 		sorted[count[array[i]] - 1] = array[i];
 		count[array[i]]--;
